@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+$MarineBlue: hsl(213, 96%, 18%);
+$PurplishBlue: hsl(243, 100%, 62%);
+$PastelBlue: hsl(228, 100%, 84%);
+$LightBlue: hsl(206, 94%, 87%);
+$StrawberryRed: hsl(354, 84%, 57%);
+$CoolGray: hsl(231, 11%, 63%);
+$LightGray: hsl(229, 24%, 87%);
+$Magnolia: hsl(217, 100%, 97%);
+$Alabaster: hsl(231, 100%, 99%);
+$White: hsl(0, 0%, 100%);
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.next-button {
+  padding: 10px 15px;
+  color: $White;
+  background-color: $MarineBlue;
+  border: none;
+  border-radius: 7px;
+}
+
+.next-button:hover {
+  background-color: hsl(213, 82%, 35%);
+}
+
+.prev-button {
+  background: transparent;
+  border: none;
+  color: $CoolGray;
+}
+
+.prev-button:hover {
+  color: $MarineBlue;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 2rem;
+  color: $MarineBlue;
+  margin-bottom: 10px;
+}
+
+.paragraph {
+  color: $CoolGray;
+  font-size: .9rem;
+  margin-bottom: 40px;
+}
+
+.width {
+  width: 100%;
+}
+
+article.info-section {
+  display: none;
+  width: 50%;
+}
+
+article.plan-section {
+  display: none;  
+  width: 50%;
+} 
+
+article.add-ons {
+  display: none; 
+  width: 50%;
+}
+
+article.summary-section {
+  display: none; 
+  width: 50%;
+}
+
+article.thank-you  {
+  display: none; 
+  width: 50%;
+}
+
+article.active-step {
+  display: block;
+}
+
+
+main {
+  padding: 20px;
+  height: 100vh;
+
+  > :first-child {
+    background: url(./assets/images/bg-sidebar-desktop.svg) no-repeat ;
+    background-size: contain;
+    background-attachment: fixed;
+    height: 93vh;
+    width: 30%;
+    padding: 30px;
+    margin-right: 60px;
+  }
+
+}
+
+
+.active {
+  background-color: $LightBlue;
+  color: #000;
+}
+
+.constant-article {
+
+  aside {
+    justify-content: flex-start;
+    color: $White;
+    margin-bottom: 25px;
+
+    > :first-child {
+      margin-right: 20px;
+      border: 1px solid $White;
+      padding: 7px 0px 0px 11px;
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      font-size: .8rem;
+    }
+
+    >:last-child {
+
+      p {
+        color: $PastelBlue;
+        font-weight: 400;
+        font-size: .8rem;
+      }
+
+      h3 {
+        font-weight: 500;
+        font-size: .9rem;
+      }
+    }
+  }  
+}
+
+
+.error-active {
+  border: 1px solid $StrawberryRed !important;
+}
+
+article.info-section {  
+
+  div {
+    position: relative;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: .8rem;
+  }
+
+  span {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: .8rem;
+    color: $StrawberryRed;
+  }
+
+  input {
+
+    &:not([type="submit"]) {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid $CoolGray;
+      border-radius: 7px;
+    }
+    &[type="submit"] {
+      float: right;
+      margin-top: 60px;      
+    }
+    
+  }
+}
+
+.cards {
+  
+  div.selected {
+    background: $Magnolia;
+    border: 1px solid $MarineBlue;
+  }
+
+  div.card {
+    border: 1px solid $CoolGray;
+    border-radius: 5px;
+    margin-right: 20px;
+    padding: 10px;
+    width: 33%;
+    cursor: pointer;    
+
+    &:hover {
+      border: 1px solid $MarineBlue;
+    }
+
+    img {
+      margin-bottom: 50px;
+    }
+
+    h4 {
+      color: $MarineBlue;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .duration {
+      color: $CoolGray;
+      font-size: .7rem;
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+
+    .free {
+      color: $MarineBlue;
+      font-size: .8rem;
+      font-weight: 400;
+    }
+  }
+}
+
+.toggle-switch {
+  background: $Magnolia;
+  width: 95%;
+  margin-top: 30px;
+  align-items: center;
+  padding: 10px 0;
+  justify-content: center;
+  border-radius: 6px;
+
+  span.active-sub {
+    color: $MarineBlue;
+  }
+
+  .toggle-option {
+    font-size: .8rem;
+    color: $CoolGray;
+  }
+  
+  div.yearly {
+    .toggle-circle {
+      left: 60%;
+    }
+  }
+
+  .toggle-button {
+    background: $MarineBlue;
+    width: 30px;
+    height: 15px;
+    margin: 0px 15px;
+    border-radius: 10px;
+    position: relative;
+
+    .toggle-circle {
+      background: $White;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      position: absolute;
+      top: 2.3px;
+      left: 2.3px;
+      transition: left 0.5s;
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.nav-buttons {
+  justify-content: space-between;
+  width: 95%;
+  margin-top: 70px;
+}
+
+div.checked {
+  background: $Magnolia;
+  border: 1px solid $MarineBlue;
+}
+
+.checkbox {
+  width: 90%;
+  border: 1px solid $CoolGray;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-bottom: 20px;
+
+  &:hover {
+    border: 1px solid $MarineBlue;
+  }
+
+  input {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+
+  label {
+    color: $MarineBlue;
+    font-weight: 700;
+    font-size: .8rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  p {
+    color: $CoolGray;
+    font-size: .7rem;
+    margin-top: 3px;
+  }
+  
+  > p {
+    color: $PurplishBlue;
+  }
+}
+
+article.summary-section {
+  width: 50%;
+  
+  div.flex {
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  hr {
+    margin-bottom: 20px;
+  }
+
+  .plan-details {
+    background-color: $Magnolia;
+    padding: 20px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+  }
+
+  .selected-plan {
+    h4{
+      color: $MarineBlue;
+      margin-bottom: 2px;
+      font-family: .9rem;
+      font-weight: 500;
+    }
+    button {
+      text-decoration: underline;
+    }
+    p{
+      color: $MarineBlue;
+      font-weight: 700;
+      font-size: .8rem;
+    }
+  }
+
+  .plan-addon {
+    
+    >p:first-child {
+      color: $CoolGray;
+      font-size: .8rem;
+    }
+    >:last-child {
+      color: $MarineBlue;
+      font-size: .8rem;
+    }
+  }
+
+  .total {
+    padding: 0px 20px;
+  }
+}
+
+article.thank-you {
+  text-align: center;
+  width: 50%;
+  transform: translateY(25%);
+
+  img, h1 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    line-height: 25px;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 661px) {
+  main {   
+
+    .constant-section{    
+      
+      >div:first-child {
+        margin-left: 2rem;
+      }
+     
+      >div:last-child {
+        display: none;
+      }
+    }
+  }
+
+  article.plan-section {
+    width: 100%;
+  }
+
+  article.add-ons {
+    width: 100%;
+  }
+
+  article.summary-section {
+    width: 100%;
+  }
+
+  article.thank-you {
+    width: 100%;
+  }
+
+  .nav-buttons {
+    margin-top: 40px;
+  }
+
+  div.cards {
+    flex-direction: column;
+    margin-bottom: 0px;
+
+     div.card {
+      display: flex;
+      flex-direction: row;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding: 10px;
+      width: 100%;
+
+      img {
+        margin: 0px 10px 0px 0px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 520px){
+  body {
+    background: $Magnolia;
+  }
+
+  .header {
+    font-size: 1.5rem;
+  }
+
+  .paragraph {
+    margin-bottom: 15px;
+    font-size: .8rem;    
+  }
+
+  article.info-section {
+    width: 100%;
+  }  
+
+  .width {
+    width: 90%;
+    min-height: 50vh;
+    margin: -55px auto 0px;
+    padding: 20px;
+    border-radius: 6px;
+    background: #fff;
+  }
+  main {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+
+    >:first-child {
+      background: url(./assets/images/bg-sidebar-mobile.svg) no-repeat;
+      background-size: cover;
+      background-attachment: scroll;
+      height: 25vh;
+      width: 100vw;
+      margin: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 30px;
+    }
+  }
+
+  // .form-container {
+  //   position: static;
+  // }
+
+
+  article.constant-article {
+    padding-top: 9px;
+  }
+  
+    aside.constant-section {
+      padding: 10px;
+
+      div:first-child {
+        margin: 0px;
+      }
+  }
+  
+  div.submit-btn {
+    background-color: #fff;
+    width: 100%;  
+    height: 9vh; 
+    position: absolute !important;   
+    bottom: 0;
+
+    input[type="submit"] {
+      margin: 7px 10px 0px 0px;
+    }
+  }
+
+  .toggle-switch {
+    margin-top: 7px;
+  }
+
+  div.nav-buttons {
+    background: #fff;
+    width: 100%;
+    height: 9vh;
+    padding: 0px 10px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0 !important;
+  }
+
+  .checkbox {
+    padding: 5px 15px;
+
+    >div {
+      margin-right: 10px;
+    }
+
+    label {
+      font-size: .7rem;
+    }
+    p {
+      font-size: .7rem;
+    }
+  }
+
+  article.thank-you {
+    div {
+      margin-top: -110px;
+    }
+  }
+    
+}
